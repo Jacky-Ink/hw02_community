@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
   <title>{{ group.title }}</title>
 {% endblock title %}
@@ -13,10 +14,10 @@
           <article>
             <ul>
               <li>
-                Автор: {{ post.author }}
+                Автор: {{ post.author.get_full_name }}
               </li>
               <li>
-                Дата публикации: {{ post.pub_date|date: "d E Y" }}
+                Дата публикации: {{ post.pub_date|date:"d E Y" }}
               </li>
             </ul>      
             <p>
