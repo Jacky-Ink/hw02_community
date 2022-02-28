@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}
-  <title>{{ group.title }}</title>
-{% endblock title %}
+
+<title>
+  {% block title %}
+    {{ group.title }}
+  {% endblock title %}
+</title>
+
 {% block content %}
-      <!-- класс py-5 создает отступы сверху и снизу блока -->
       <div class="container py-5">
         <h1>{{ group.title }}</h1>
         <p>
@@ -26,7 +29,6 @@
           </article>
           {% if not forloop.last %}<hr>{% endif %}
         {% endfor %}
-          <!-- под последним постом нет линии -->
       </div>  
 {% endblock content %}
   
