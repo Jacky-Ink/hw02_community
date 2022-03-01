@@ -1,12 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
 
-<title>
-  {% block title %}
-    {{ group.title }}
-  {% endblock title %}
-</title>
-
 {% block content %}
       <div class="container py-5">
         <h1>{{ group.title }}</h1>
@@ -22,13 +16,12 @@
               <li>
                 Дата публикации: {{ post.pub_date|date:"d E Y" }}
               </li>
-            </ul>      
+            </ul>
             <p>
               {{ post.text }}
-            </p>         
+            </p>
           </article>
           {% if not forloop.last %}<hr>{% endif %}
         {% endfor %}
-      </div>  
+      </div>
 {% endblock content %}
-  
