@@ -1,12 +1,4 @@
-{% extends 'base.html' %}
-
-{% block title %}
-Последние обновления на сайте:
-{% endblock %}
-
-{% block content %}
-  <h1>Последние обновления на сайте</h1>
-  {% for post in posts %}
+{% for post in posts %}
 <article>
   <ul>
     <li>
@@ -17,7 +9,7 @@
     </li>
   </ul>
   <p>{{ post.text }}</p>
-  {% if post.group %}   
+  {% if post.group and PRINT_LINK %}   
     <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
   {% endif %}
 </article>
@@ -25,4 +17,3 @@
   <hr>
 {% endif %}
 {% endfor %}
-{% endblock%}

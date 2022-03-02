@@ -17,12 +17,14 @@
     </title>
     </head>
   <body>
-    {%include 'includes/header.html'%}
+    {% include 'includes/header.html'%}
     <main>
-      {% block content %}
-        'пусто'
-      {% endblock  %}
+      <div class="container py-5">
+        {% block content %}
+          'пусто'
+        {% endblock %}
+      </div>
     </main>
-      {%include 'includes/footer.html'%}
+      {% include 'includes/footer.html'%}
   </body>
 </html>
